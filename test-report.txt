@@ -1,0 +1,21 @@
+
+Execution of 1 workers started at 2023-09-05T17:54:58.353Z
+
+[0-0] RUNNING in chrome - file:///test/specs/sample.spec.js
+[0-0] PASSED in chrome - file:///test/specs/sample.spec.js
+
+ "spec" Reporter:
+------------------------------------------------------------------
+[chrome 116.0.5845.140 mac os x #0-0] Running: chrome (v116.0.5845.140) on mac os x
+[chrome 116.0.5845.140 mac os x #0-0] Session ID: e111cbf6da13b5ff140df93564bef192
+[chrome 116.0.5845.140 mac os x #0-0]
+[chrome 116.0.5845.140 mac os x #0-0] » /test/specs/sample.spec.js
+[chrome 116.0.5845.140 mac os x #0-0] WebdriverIO - API Demo
+[chrome 116.0.5845.140 mac os x #0-0]    ✓ [V1] GET - Ninfa McDermott
+[chrome 116.0.5845.140 mac os x #0-0]    ✓ [V1] GET - Approval Request
+[chrome 116.0.5845.140 mac os x #0-0]
+[chrome 116.0.5845.140 mac os x #0-0] 2 passing (1.6s)
+
+
+Spec Files:	 1 passed, 1 total (100% completed) in 00:00:04 
+

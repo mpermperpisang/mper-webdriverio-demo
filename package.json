@@ -2,7 +2,7 @@
   "name": "my-new-project",
   "type": "module",
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.js | tee ./test-report.txt"
   },
   "devDependencies": {
     "@babel/core": "^7.22.15",
