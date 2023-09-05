@@ -1,10 +1,25 @@
 import axios from 'axios';
+import { expect } from 'chai';
 
-describe('WebdriverIO Component Testing', () => {
-  it('should be able to render to the DOM and assert', async () => {
-    await axios.get('https://api.github.com/users/mapbox').then(browser.pause(50000))
-    .then((response) => {
-      console.log("data:::::::: " + JSON.stringify(response.data));
-    })
+const axiosInstance = axios.create({
+  baseURL: process.env.BASE_API,
+});
+
+const endpoint = {
+  v1NinfaMcDermott: '/v1/Ninfa+McDermott',
+  v1UserApprovalRequests: `/v1/${process.env.API_USER}/approvalRequests`
+}
+
+describe('WebdriverIO - API Demo', () => {
+  it('[V1] GET - Ninfa McDermott', async () => {
+    const response = await axiosInstance.get(endpoint.v1NinfaMcDermott)
+
+    expect(response.status).to.equal(200);
+  })
+
+  it('[V1] GET - Approval Request', async () => {
+    const response = await axiosInstance.get(endpoint.v1UserApprovalRequests)
+
+    expect(response.status).to.equal(200);
   })
 })
