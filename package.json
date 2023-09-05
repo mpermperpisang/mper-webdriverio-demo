@@ -1,0 +1,20 @@
+{
+  "name": "my-new-project",
+  "type": "module",
+  "devDependencies": {
+    "@babel/core": "^7.22.15",
+    "@babel/preset-env": "^7.22.15",
+    "@babel/register": "^7.22.15",
+    "@wdio/cli": "^8.16.4",
+    "@wdio/mocha-framework": "^8.16.3",
+    "@wdio/spec-reporter": "^8.16.3"
+  },
+  "scripts": {
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "dependencies": {
+    "@wdio/local-runner": "^8.16.4",
+    "axios": "^1.5.0",
+    "dotenv": "^10.0.0"
+  }
+}
