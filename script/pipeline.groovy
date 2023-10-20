@@ -42,7 +42,7 @@ pipeline {
                 ],
                 userRemoteConfigs: [[
                   credentialsId: 'mpermperpisang',
-                  url: 'https://github.com/mpermperpisang/mpermperpisang-allo-private.git',
+                  url: 'https://github.com/mpermperpisang/mper-wdio-demo.git',
                   refspec: '+refs/heads/'+params.BRANCH+':refs/remotes/origin/'+params.BRANCH
                 ]]
               ]

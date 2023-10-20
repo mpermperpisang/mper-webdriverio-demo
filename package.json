@@ -2,7 +2,7 @@
   "name": "my-new-project",
   "type": "module",
   "scripts": {
-    "wdio": "wdio run ./config/wdio.conf.api.js | tee ./test-report.txt",
+    "testAPI": "wdio run ./config/wdio.conf.api.js | tee ./test-report.txt",
     "testChrome": "wdio run ./config/wdio.conf.chrome.js --cucumberOpts.tagExpression",
     "testFirefox": "wdio run ./config/wdio.conf.firefox.js --cucumberOpts.tagExpression",
     "reporter": "./node_modules/.bin/allure generate allure-results/ --clean",

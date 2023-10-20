@@ -2,25 +2,58 @@
 import axios from 'axios';
 import { expect } from 'chai';
 
-const axiosInstance = axios.create({
+const endpointAPI = axios.create({
   baseURL: process.env.BASE_API,
 });
 
+const payloadCreateUsers = {
+  name: 'morpheus',
+  job: 'leader',
+};
+
+const payloadUpdateUsers = {
+  name: 'morpheus',
+  job: 'zion resident',
+};
+
 const endpoint = {
-  v1NinfaMcDermott: '/v1/Ninfa+McDermott',
-  v1UserApprovalRequests: `/v1/${process.env.API_USER}/approvalRequests`,
+  endpointListUsers: '/users?page=2',
+  endpointCreateUsers: '/users',
+  endpointSpesificUsers: '/users/2',
 };
 
 describe('WebdriverIO - API Demo', () => {
-  it('[V1] GET - Ninfa McDermott', async () => {
-    const response = await axiosInstance.get(endpoint.v1NinfaMcDermott);
+  it('GET - List Users', async () => {
+    const response = await endpointAPI.get(endpoint.endpointListUsers);
 
     expect(response.status).to.equal(200);
   });
 
-  it('[V1] GET - Approval Request', async () => {
-    const response = await axiosInstance.get(endpoint.v1UserApprovalRequests);
+  it('POST - Create Users', async () => {
+    const response = await endpointAPI.post(endpoint.endpointCreateUsers, payloadCreateUsers);
+
+    expect(response.status).to.equal(201);
+    expect(response.data).to.have.all.keys('name', 'job', 'id', 'createdAt');
+  });
+
+  it('PUT - Update Users', async () => {
+    const response = await endpointAPI.put(endpoint.endpointSpesificUsers, payloadUpdateUsers);
 
     expect(response.status).to.equal(200);
+    expect(response.data).to.have.all.keys('name', 'job', 'updatedAt');
+  });
+
+  it('PATCH - Update Users', async () => {
+    const response = await endpointAPI.patch(endpoint.endpointSpesificUsers, payloadUpdateUsers);
+
+    expect(response.status).to.equal(200);
+    expect(response.data).to.have.all.keys('name', 'job', 'updatedAt');
+  });
+
+  it('DELETE - Delete Users', async () => {
+    const response = await endpointAPI.delete(endpoint.endpointSpesificUsers);
+
+    expect(response.status).to.equal(204);
+    expect(response.data).to.have.length(0);
   });
 });
