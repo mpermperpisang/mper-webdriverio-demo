@@ -2,6 +2,9 @@
 NPM=npm
 NPMCI=$(NPM) ci
 NPMRUN=$(NPM) run
+DOCKERCMD=docker
+DOCKERRM=$(DOCKERCMD) rm
+DOCKERRMI=$(DOCKERCMD) rmi
 
 # Dependencies section BEGIN
 deps: cp-env ci-deps
@@ -11,15 +14,35 @@ ci-deps:
 # Dependencies section END
 
 # Docker section BEGIN
+dockerAPI: docker-build docker-run
+
 dockerChrome: docker-up run-chrome docker-down open-reporter
 
 dockerFirefox: docker-up run-firefox docker-down open-reporter
+
+docker-build:
+	docker build --no-cache -t api-test/node .
+
+docker-run:
+	docker run --name test_api api-test/node npm run testAPI
 
 docker-up:
 	docker-compose up -d
 
 docker-down:
 	docker-compose down
+
+docker-rm: container-rm images-rm
+
+# remove all docker container
+container-rm:
+	@$(DOCKERRM) -f $$(docker ps -aq)
+	@echo "Docker container successfully removed"
+
+# remove all docker images
+images-rm:
+	@$(DOCKERRMI) -f $$(docker images -aq)
+	@echo "Docker images successfully removed"
 # Docker section END
 
 # Automation run section BEGIN
@@ -37,7 +60,6 @@ run-reporter:
 
 open-reporter:
 	@$(NPMRUN) open-reporter
-
 # Automation run section END
 
 # Others section BEGIN

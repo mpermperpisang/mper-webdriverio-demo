@@ -6,6 +6,7 @@ pipeline {
     string name: 'TAGGING', defaultValue: '@sample', description: 'Define tag to run specific automation scenarios'
     choice name: 'NECESSITY', choices: ['pull_request', 'regression', 'daily_run'], description: 'Define purpose to run automation scenarios'
     choice name: 'BROWSER', choices: ['chrome', 'firefox'], description: 'Define browser to run automation scenarios'
+    choice name: 'ENV', choices: ['Pre-Production', 'Production'], description: 'Define env to run automation scenarios'
     booleanParam name: 'UPDATE_ENV', defaultValue: false, description: 'Choose if any env update'
     booleanParam name: 'UPDATE_DOCKER', defaultValue: false, description: 'Choose if any docker update'
   }

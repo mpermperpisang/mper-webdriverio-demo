@@ -6,8 +6,6 @@ Junior developers take simple requirements and create complex code
 Senior developers take complex requirements and create simple code
 ```
 
-#### DISCLAIMER: I'm using MacBook Pro M1, so I cannot join NodeJS + Chrome (etc) docker. So I choose to install NodeJS in local instead of using Docker.
-
 ## Preparation
 ### Installation
 - [x] Nodejs >= 18.x.x
@@ -30,8 +28,7 @@ Senior developers take complex requirements and create simple code
 
 ### API
 #### Without Docker
-1. `npm ci`
-2. `npm run wdio`
+`npm run testAPI`
 
 #### With Docker
-1.
+`make dockerAPI` or `make dockerAPI tags='GET - List Users'`

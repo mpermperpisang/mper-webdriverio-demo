@@ -1,3 +1,5 @@
+const { removeSync } = require('fs-extra');
+
 exports.config = {
   runner: 'local',
   specs: ['../test/specs/**/*.spec.js'],
@@ -13,5 +15,17 @@ exports.config = {
   }],
   logLevel: 'error',
   framework: 'mocha',
-  reporters: ['spec'],
+  reporters: [
+    ['allure', {
+      outputDir: './allure-results',
+      disableWebdriverStepsReporting: true,
+      disableWebdriverScreenshotsReporting: false,
+      useCucumberStepReporter: false,
+      addConsoleLogs: true,
+    }],
+  ],
+  onPrepare: () => {
+    removeSync('./allure-results/');
+    removeSync('./allure-report/');
+  },
 };

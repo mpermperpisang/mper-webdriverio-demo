@@ -19,7 +19,7 @@ exports.config = {
   runner: 'local',
   capabilities: [{
     specs: [
-      '../features/scenarios/**/*.feature',
+      '../test/features/scenarios/**/*.feature',
     ],
     maxInstances: parseInt(process.env.INSTANCES, 10) || 2,
     browserName: 'firefox',
@@ -28,6 +28,7 @@ exports.config = {
   }],
   services: ['devtools'],
   logLevel: 'error',
+  baseUrl: 'https://www.saucedemo.com',
   waitforTimeout: 10000,
   connectionRetryTimeout: 120000,
   connectionRetryCount: 3,
@@ -42,7 +43,7 @@ exports.config = {
     }],
   ],
   cucumberOpts: {
-    require: ['./features/step_definitions/login_steps.js'],
+    require: ['./test/features/step_definitions/login_steps.js'],
     backtrace: true,
     dryRun: false,
     failFast: false,

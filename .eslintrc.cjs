@@ -48,7 +48,7 @@ module.exports = {
       },
     ],
   },
-  ignorePatterns: ['report/*', '*.app', '*.ipa', '*.apk'],
+  ignorePatterns: ['allure-report/*', 'allure-results/*', 'report/*', '*.app', '*.ipa', '*.apk'],
   settings: {
     react: {
       version: '7.27.1',
