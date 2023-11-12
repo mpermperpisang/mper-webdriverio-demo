@@ -11,6 +11,7 @@ const browserOptions = {
     '--disk-cache-size=256',
     '--log-level=2',
     '--enable-auto-reload',
+    '--headless',
   ],
 };
 

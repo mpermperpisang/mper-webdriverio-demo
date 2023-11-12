@@ -16,5 +16,75 @@
       "feature tag": 0,
       "scenario tag": 2
     }
+  ],
+  "no-trailing-spaces": "error",
+  "keywords-in-logical-order": "error",
+  "no-examples-in-scenarios": "error",
+  "no-background-only-scenario": "error",
+  "no-dupe-feature-names": "error",
+  "no-duplicate-tags": "error",
+  "no-empty-background": "error",
+  "no-empty-file": "error",
+  "no-files-without-scenarios": "error",
+  "no-homogenous-tags": "error",
+  "no-multiple-empty-lines": "error",
+  "no-scenario-outlines-without-examples": "error",
+  "no-unnamed-features": "error",
+  "no-unnamed-scenarios": "error",
+  "no-unused-variables": "error",
+  "one-space-between-tags": "error",
+  "use-and": "error",
+  "new-line-at-eof": [
+    "error",
+    "yes"
+  ],
+  "max-scenarios-per-file": [
+    "error",
+    {
+      "maxScenarios": 10,
+      "countOutlineExamples": true
+    }
+  ],
+  "max-tags-lines": [
+    "error",
+    {
+      "feature": 1,
+      "scenario": 5,
+      "example": 5
+    }
+  ],
+  "name-length": [
+    "error",
+    {
+      "Feature": 70,
+      "Scenario": 70,
+      "Step": 70
+    }
+  ],
+  "no-dupe-scenario-names": [
+    "error",
+    "anywhere"
+  ],
+  "scenario-size": [
+    "error",
+    {
+      "steps-length": {
+        "Background": 5,
+        "Scenario": 10
+      }
+    }
+  ],
+  "table-align": [
+    "error",
+    {
+      "steps": true,
+      "examples": true
+    }
+  ],
+  "file-name": [
+    "error",
+    {
+      "style": "snake_case"
+    }
   ]
 }

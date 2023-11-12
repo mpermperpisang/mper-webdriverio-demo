@@ -1,5 +1,5 @@
 {
-  "name": "my-new-project",
+  "name": "mper-wdio-demo",
   "scripts": {
     "testAPI": "wdio run ./config/wdio.conf.api.js | tee ./test-report.txt",
     "testChrome": "wdio run ./config/wdio.conf.chrome.js --cucumberOpts.tagExpression",

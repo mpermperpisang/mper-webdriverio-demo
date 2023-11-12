@@ -6,6 +6,9 @@ module.exports = {
     commonjs: true,
     es2021: true,
     node: true,
+    webextensions: true,
+    jquery: true,
+    jest: true,
   },
   extends: ['airbnb'],
   parserOptions: {
@@ -14,18 +17,38 @@ module.exports = {
   },
   plugins: ['no-comments'],
   rules: {
+    'no-eval': [2, { allowIndirect: true }],
+    camelcase: [2, { properties: 'always' }],
     'no-trailing-spaces': [2, { skipBlankLines: false }],
     indent: ['error', 2],
     'no-unused-vars': ['error', { vars: 'all' }],
     'max-len': ['error', { code: 100 }],
+    'padding-line-between-statements': [
+      'error',
+      {
+        blankLine: 'always',
+        prev: ['expression', 'if', 'switch'],
+        next: ['const', 'if', 'switch'],
+      },
+      {
+        blankLine: 'always',
+        prev: ['const', 'if', 'switch'],
+        next: ['expression', 'if', 'switch'],
+      },
+      {
+        blankLine: 'always',
+        prev: 'multiline-expression',
+        next: '*',
+      },
+    ],
     'no-comments/disallowComments': [
       'error',
       {
-        allow: ['TODO', 'NOTE', 'global'],
+        allow: ['TODO', 'FIXME', 'NOTE', 'DEBUG', 'eslint', 'global'],
       },
     ],
   },
-  ignorePatterns: ['node_modules/*', 'allure-*/*'],
+  ignorePatterns: ['report/*', '*.app', '*.ipa', '*.apk'],
   settings: {
     react: {
       version: '7.27.1',
