@@ -15,7 +15,7 @@ Given(/user (\w+) with username "([^"]*)"/, async (page, username) => {
 
 When(/^user can( not)? continue (\w+) process$/, async (access, page) => {
   if (access !== null) {
-    await pages[page].validateLockedOutMessage();
+    await pages[page].validateLockedOutMessage(); // TODO need to separate function
   } else {
     await pages[page].validateLockedOutMessage();
   }

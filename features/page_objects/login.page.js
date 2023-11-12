@@ -1,25 +1,9 @@
-const { $, expect, browser } = require('@wdio/globals');
-const Page = require('./page');
+const { expect, browser } = require('@wdio/globals');
+const Element = require('../element_properties/element');
 
-class LoginPage extends Page {
-  get fieldUsername() {
-    this.username = $('#user-name');
-    return this.username;
-  }
-
-  get fieldPassword() {
-    this.password = $('#password');
-    return this.password;
-  }
-
-  get buttonLogin() {
-    this.button = $('#login-button');
-    return this.button;
-  }
-
-  get messagelockedOut() {
-    this.text = $('//*[text()="Epic sadface: Sorry, this user has been locked out."]');
-    return this.text;
+class LoginPage extends Element {
+  open() {
+    return super.open();
   }
 
   async login(username) {
@@ -37,10 +21,6 @@ class LoginPage extends Page {
     await expect(this.fieldUsername).toBeDisplayed();
     await expect(this.fieldPassword).toBeDisplayed();
     await expect(this.buttonLogin).toBeDisplayed();
-  }
-
-  open() {
-    return super.open();
   }
 }
 
