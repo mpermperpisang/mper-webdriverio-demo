@@ -95,6 +95,14 @@ pipeline {
       }
     }
 
+    stage('Run API Automation') {
+      steps {
+        script {
+          sh "npm run testAPI"
+        }
+      }
+    }
+
     stage('Run Web Automation') {
       steps {
         catchError(stageResult: 'FAILURE') {
