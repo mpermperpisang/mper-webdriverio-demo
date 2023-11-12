@@ -1,19 +1,14 @@
-const { $, expect, browser } = require('@wdio/globals');
-const Page = require('./page');
+const { expect, browser } = require('@wdio/globals');
+const Element = require('../element_properties/home_element');
 
-class HomePage extends Page {
+class HomePage extends Element {
   open() {
     return super.open('/inventory.html');
   }
 
-  get headerHome() {
-    this.header = $('//div[text()="Swag Labs"]');
-    return this.header;
-  }
-
   async validateIsInHomePage() {
     await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
-    await expect(this.headerHome).toBeDisplayed();
+    await expect(this.header).toBeDisplayed();
   }
 }
 
