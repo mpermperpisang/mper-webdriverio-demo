@@ -11,7 +11,6 @@ const browserOptions = {
     '--disk-cache-size=256',
     '--log-level=2',
     '--enable-auto-reload',
-    '--headless',
   ],
 };
 
@@ -28,6 +27,7 @@ exports.config = {
   }],
   services: ['devtools'],
   logLevel: 'error',
+  baseUrl: 'https://www.saucedemo.com',
   waitforTimeout: 10000,
   connectionRetryTimeout: 120000,
   connectionRetryCount: 3,

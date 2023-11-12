@@ -1,4 +1,4 @@
-export const config = {
+exports.config = {
   runner: 'local',
   specs: ['../test/specs/**/*.spec.js'],
   capabilities: [{
@@ -15,5 +15,3 @@ export const config = {
   framework: 'mocha',
   reporters: ['spec'],
 };
-
-export default config;
