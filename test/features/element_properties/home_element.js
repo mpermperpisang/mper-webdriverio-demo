@@ -8,6 +8,6 @@ const element = {
 module.exports = class ElementLogin extends Page {
   constructor() {
     super();
-    this.header = element.header;
+    this.HEADER = element.header;
   }
 };

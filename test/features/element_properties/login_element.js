@@ -11,9 +11,9 @@ const element = {
 module.exports = class ElementLogin extends Page {
   constructor() {
     super();
-    this.fieldUsername = element.fieldUsername;
-    this.fieldPassword = element.fieldPassword;
-    this.buttonLogin = element.buttonLogin;
-    this.messagelockedOut = element.messagelockedOut;
+    this.FIELD_USERNAME = element.fieldUsername;
+    this.FIELD_PASSWORD = element.fieldPassword;
+    this.BTN_LOGIN = element.buttonLogin;
+    this.MSG_LOCKED_OUT = element.messagelockedOut;
   }
 };

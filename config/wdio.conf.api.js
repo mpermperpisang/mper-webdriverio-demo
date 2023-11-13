@@ -1,17 +1,19 @@
 const { removeSync } = require('fs-extra');
 
+const browserOptions = {
+  args: [
+    '--headless',
+    '--disable-gpu',
+  ],
+};
+
 exports.config = {
   runner: 'local',
   specs: ['../test/specs/**/*.spec.js'],
   capabilities: [{
     acceptInsecureCerts: true,
     browserName: 'chrome',
-    'goog:chromeOptions': {
-      args: [
-        '--headless',
-        '--disable-gpu',
-      ],
-    },
+    'goog:chromeOptions': browserOptions,
   }],
   logLevel: 'error',
   framework: 'mocha',

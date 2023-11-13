@@ -13,7 +13,7 @@ module.exports = {
   extends: ['airbnb'],
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 12,
+    ecmaVersion: 2022,
   },
   plugins: ['no-comments'],
   rules: {

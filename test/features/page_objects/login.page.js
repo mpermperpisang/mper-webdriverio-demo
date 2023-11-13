@@ -7,20 +7,20 @@ class LoginPage extends Element {
   }
 
   async login(username) {
-    await this.fieldUsername.setValue(username);
-    await this.fieldPassword.setValue(process.env.PASSWORD);
-    await this.buttonLogin.click();
+    await this.FIELD_USERNAME.setValue(username);
+    await this.FIELD_PASSWORD.setValue(process.env.PASSWORD);
+    await this.BTN_LOGIN.click();
   }
 
   async validateLockedOutMessage() {
-    await expect(this.messagelockedOut).toBeDisplayed();
+    await expect(this.MSG_LOCKED_OUT).toBeDisplayed();
   }
 
   async validateLoginPage() {
     await expect(browser).toHaveUrl('https://www.saucedemo.com/');
-    await expect(this.fieldUsername).toBeDisplayed();
-    await expect(this.fieldPassword).toBeDisplayed();
-    await expect(this.buttonLogin).toBeDisplayed();
+    await expect(this.FIELD_USERNAME).toBeDisplayed();
+    await expect(this.FIELD_PASSWORD).toBeDisplayed();
+    await expect(this.BTN_LOGIN).toBeDisplayed();
   }
 }
 
