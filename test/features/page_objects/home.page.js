@@ -8,7 +8,7 @@ class HomePage extends Element {
 
   async validateIsInHomePage() {
     await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
-    await expect(this.HEADER).toBeDisplayed();
+    await expect(this.HEADER('Swag Labs')).toBeDisplayed();
   }
 }
 

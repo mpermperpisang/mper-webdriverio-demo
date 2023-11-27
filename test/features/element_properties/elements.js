@@ -17,9 +17,17 @@ module.exports = class Element extends Page {
           new Properties(
             fs.readFileSync(path.join(__dirname, 'properties', filename)),
           ).collection.forEach((property) => {
-            this[property.key] = $(property.value);
+            this.element(property);
           });
         });
     });
+  }
+
+  async element(property) {
+    if (property.value.match(/(%s)/ig)) {
+      this[property.key] = (element) => $(property.value.replace(/(%s)/ig, element));
+    } else {
+      this[property.key] = $(property.value);
+    }
   }
 };
