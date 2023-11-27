@@ -17,7 +17,7 @@ class LoginPage extends Element {
   }
 
   async validateLoginPage() {
-    await expect(browser).toHaveUrl('https://www.saucedemo.com/');
+    await expect(browser).toHaveUrl(process.env.BASE_WEB);
     await expect(this.FIELD_USERNAME).toBeDisplayed();
     await expect(this.FIELD_PASSWORD).toBeDisplayed();
     await expect(this.BTN_LOGIN).toBeDisplayed();

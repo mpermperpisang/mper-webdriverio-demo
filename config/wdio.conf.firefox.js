@@ -28,7 +28,7 @@ exports.config = {
   }],
   services: ['devtools'],
   logLevel: 'error',
-  baseUrl: 'https://www.saucedemo.com',
+  baseUrl: process.env.BASE_WEB,
   waitforTimeout: 10000,
   connectionRetryTimeout: 120000,
   connectionRetryCount: 3,
