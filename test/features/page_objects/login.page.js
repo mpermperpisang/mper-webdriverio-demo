@@ -1,5 +1,5 @@
 const { expect, browser } = require('@wdio/globals');
-const Element = require('../element_properties/login_element');
+const Element = require('../element_properties/elements');
 
 class LoginPage extends Element {
   open() {

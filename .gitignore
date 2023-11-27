@@ -3,3 +3,4 @@ node_modules
 *.json
 *.txt
 allure*
+.DS_Store
