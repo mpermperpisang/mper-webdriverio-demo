@@ -1,9 +1,8 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework');
 
-const LoginPage = require('../page_objects/login.page');
-const HomePage = require('../page_objects/home.page');
-
 const message = require('../../../helper/message');
+const LoginPage = require('../page_objects/objects/login.page');
+const HomePage = require('../page_objects/objects/home.page');
 
 const pages = {
   login: LoginPage,

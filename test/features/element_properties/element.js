@@ -2,6 +2,7 @@ const { $ } = require('@wdio/globals');
 const { Properties } = require('properties-file');
 const fs = require('fs');
 const path = require('path');
+
 const Page = require('../page_objects/page');
 
 module.exports = class Element extends Page {
