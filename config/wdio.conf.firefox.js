@@ -19,7 +19,7 @@ exports.config = {
   runner: 'local',
   capabilities: [{
     specs: [
-      '../test/features/scenarios/**/*.feature',
+      '../test/features/scenarios/*_web/**/*.feature',
     ],
     maxInstances: parseInt(process.env.INSTANCES, 10) || 2,
     browserName: 'firefox',

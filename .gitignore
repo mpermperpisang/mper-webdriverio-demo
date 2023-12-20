@@ -4,3 +4,6 @@ node_modules
 *.txt
 allure*
 .DS_Store
+*.apk
+*.app
+*.ipa
