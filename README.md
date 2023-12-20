@@ -18,6 +18,13 @@ Senior developers take complex requirements and create simple code
 *Note: Please change password in .env (before trying to run)
 
 ## Running sample
+### API
+#### Without Docker
+`npm run testAPI`
+
+#### With Docker
+`make dockerAPI` or `make dockerAPI tags='GET - List Users'`
+
 ### Web
 #### With Docker
 ##### Browser Chrome
@@ -25,10 +32,3 @@ Senior developers take complex requirements and create simple code
 
 ##### Browser Firefox
 `make dockerFirefox` or `make dockerFirefox tags=@sample`
-
-### API
-#### Without Docker
-`npm run testAPI`
-
-#### With Docker
-`make dockerAPI` or `make dockerAPI tags='GET - List Users'`
