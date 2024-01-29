@@ -7,3 +7,6 @@ allure*
 *.apk
 *.app
 *.ipa
+*.mp4
+*.png
+_results_
