@@ -1,10 +1,11 @@
 {
-  "name": "mper-wdio-demo",
+  "name": "mper-webdriver-demo",
   "scripts": {
-    "testAPI": "wdio run ./config/wdio.conf.api.js | tee ./test-report.txt",
-    "testChrome": "wdio run ./config/wdio.conf.chrome.js --cucumberOpts.tagExpression",
-    "testFirefox": "wdio run ./config/wdio.conf.firefox.js --cucumberOpts.tagExpression",
-    "testAndroid": "wdio run ./config/wdio.conf.android.js --cucumberOpts.tagExpression",
+    "testAPI": "wdio run ./config/01_wdio.conf.api.js | tee ./test-report.txt",
+    "testChrome": "wdio run ./config/02_wdio.conf.chrome.js --cucumberOpts.tagExpression",
+    "testFirefox": "wdio run ./config/02_wdio.conf.firefox.js --cucumberOpts.tagExpression",
+    "testAndroid": "wdio run ./config/03_wdio.conf.android.js --cucumberOpts.tagExpression",
+    "testIOS": "wdio run ./config/04_wdio.conf.ios.js --cucumberOpts.tagExpression",
     "reporter": "./node_modules/.bin/allure generate allure-results/ --clean",
     "open-reporter": "./node_modules/.bin/allure open",
     "eslint": "./node_modules/.bin/eslint --max-warnings=0 ./",
@@ -39,6 +40,8 @@
     "@wdio/devtools-service": "^8.16.10",
     "@wdio/globals": "^8.22.1",
     "allure-commandline": "^2.24.0",
+    "appium-uiautomator2-driver": "^2.35.0",
+    "appium-xcuitest-driver": "^5.12.2",
     "axios": "^1.5.0",
     "chai": "^4.3.8",
     "devtools": "^8.16.10",
@@ -46,7 +49,8 @@
     "fs-extra": "^11.1.1",
     "properties-file": "^3.3.10",
     "wdio-chromedriver-service": "^8.1.1",
-    "wdio-geckodriver-service": "^5.0.2"
+    "wdio-geckodriver-service": "^5.0.2",
+    "wdio-video-reporter": "^3.5.0"
   },
   "optionalDependencies": {
     "git-scripts": "^0.6.4"

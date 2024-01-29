@@ -1,5 +1,5 @@
 pipeline {
-  agent any // will be auto run in any builder that idle
+  agent any
 
   parameters {
     string name: 'BRANCH', defaultValue: 'master', description: 'Define branch to run automation scenarios'
@@ -43,7 +43,7 @@ pipeline {
                 ],
                 userRemoteConfigs: [[
                   credentialsId: 'mpermperpisang',
-                  url: 'https://github.com/mpermperpisang/mper-wdio-demo.git',
+                  url: 'https://github.com/mpermperpisang/mper-webdriver-demo.git',
                   refspec: '+refs/heads/'+params.BRANCH+':refs/remotes/origin/'+params.BRANCH
                 ]]
               ]
@@ -131,18 +131,6 @@ pipeline {
           results: [[path: './allure-results']]
         ])
       }
-    }
-    success {
-      // send notif to chat
-      // record percentage
-    }
-    failure {
-      // send notif to chat
-      // record percentage
-    }
-    unstable {
-      // send notif to chat
-      // record percentage
     }
   }
 }

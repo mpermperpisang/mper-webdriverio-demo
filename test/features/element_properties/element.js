@@ -9,7 +9,7 @@ module.exports = class Element extends Page {
   constructor() {
     super();
 
-    fs.readdir(path.join(__dirname, 'properties'), (error, files) => {
+    fs.readdir(path.join(__dirname, 'properties/01_web/'), (error, files) => {
       if (error) throw error;
 
       files
@@ -30,7 +30,7 @@ module.exports = class Element extends Page {
 
   async getProperties(filename) {
     new Properties(
-      fs.readFileSync(path.join(__dirname, 'properties', filename)),
+      fs.readFileSync(path.join(__dirname, 'properties/01_web', filename)),
     ).collection.forEach((property) => {
       this.setElement(property);
     });
