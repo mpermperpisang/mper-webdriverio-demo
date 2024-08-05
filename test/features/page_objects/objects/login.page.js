@@ -3,7 +3,7 @@ const Element = require('../../element_properties/element');
 
 class LoginPage extends Element {
   open() {
-    return super.open();
+    return super.open('/v1/index.html');
   }
 
   async login(username) {

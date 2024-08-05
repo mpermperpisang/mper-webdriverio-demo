@@ -3,12 +3,12 @@ const Element = require('../../element_properties/element');
 
 class HomePage extends Element {
   open() {
-    return super.open('/inventory.html');
+    return super.open('/v1/inventory.html');
   }
 
   async validateIsInHomePage() {
-    await expect(browser).toHaveUrlContaining('/inventory.html');
-    await expect(this.HEADER('Swag Labs')).toBeDisplayed();
+    await expect(browser).toHaveUrl(`${process.env.BASE_WEB}/v1/inventory.html`);
+    await expect(this.LOGO).toBeDisplayed();
   }
 }
 

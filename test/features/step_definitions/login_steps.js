@@ -1,4 +1,4 @@
-const { Given, When, Then } = require('@wdio/cucumber-framework');
+const { Given, Then } = require('@wdio/cucumber-framework');
 
 const message = require('../../../helper/message');
 const LoginPage = require('../page_objects/objects/login.page');
@@ -12,14 +12,6 @@ const pages = {
 Given(/user (\w+) with username "([^"]*)"/, async (page, username) => {
   await pages[page].open();
   await pages[page].login(username);
-});
-
-When(/^user can( not)? continue (\w+) process$/, async (access, page) => {
-  if (access !== null) {
-    await pages[page].validateLockedOutMessage(); // TODO need to separate function
-  } else {
-    await pages[page].validateLockedOutMessage();
-  }
 });
 
 Then(/validate user (still|is) in (\w+) page/, async (access, page) => {
