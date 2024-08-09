@@ -6,6 +6,6 @@ Feature: Login
     Then validate user <ability> do to <page> page
 
     Examples:
-      | username        | ability |
-      | standard_user   | can     |
-      | locked_out_user | cannot  |
+      | username        | ability | page  |
+      | standard_user   | can     | home  |
+      | locked_out_user | cannot  | login |
